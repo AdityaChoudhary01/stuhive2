@@ -3,10 +3,6 @@ compatibility_date = "2024-03-20"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".open-next/cloudflare"
 
-# Build command
-[build]
-command = "npm install --legacy-peer-deps && npm run build:cloudflare"
-
 # D1 database binding
 [[d1_databases]]
 binding = "DB"
