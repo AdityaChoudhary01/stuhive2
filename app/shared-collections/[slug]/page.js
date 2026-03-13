@@ -7,8 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import ShareCollectionButton from "@/components/collections/ShareCollectionButton";
 import CheckoutBundleButton from "@/components/collections/CheckoutBundleButton"; // 🚀 Added Checkout Component
 
-// 🚀 PERFORMANCE & SEO: Cache this page at the edge for 1 hour. TTFB < 50ms.
-export const runtime = "edge";
+
 export const revalidate = 3600;
 
 const APP_URL = process.env.NEXTAUTH_URL || "https://www.stuhive.in";

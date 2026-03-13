@@ -11,7 +11,7 @@ import {
 } from "@/actions/admin.actions"; 
 import { getGlobalFinancialData } from "@/actions/analytics.actions"; 
 
-export const runtime = "edge";
+
 import AdminTabs from "@/components/admin/AdminTabs";
 import StatsCard from "@/components/admin/StatsCards"; 
 import { FaShieldAlt, FaUsers, FaFileAlt, FaPenNib } from "react-icons/fa";

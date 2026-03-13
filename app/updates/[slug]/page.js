@@ -6,7 +6,7 @@ import ShareButtons from "@/components/updates/ShareButtons";
 import SaveOpportunityButton from "@/components/opportunity/SaveOpportunityButton";
 
 // 🚀 HYPER-SEO: Dynamic Metadata Generation
-export const runtime = "edge";
+
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;

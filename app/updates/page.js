@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Briefcase, FileCheck, Trophy, BellRing, GraduationCap, Book, Key } from "lucide-react";
 
 // 🚀 HYPER SEO: Targeted Dynamic Metadata
-export const runtime = "edge";
+
 
 export const metadata = {
   title: "Latest Jobs, Results, Admit Cards & Answer Keys 2026 | StuHive",

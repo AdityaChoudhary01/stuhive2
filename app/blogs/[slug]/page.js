@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, MessageCircle, Eye, Star } from "lucide-react";
 import { formatDate } from "@/lib/utils";
 
-export const runtime = "edge";
+
 export const revalidate = 60;
 
 const APP_URL = process.env.NEXTAUTH_URL || "https://www.stuhive.in";

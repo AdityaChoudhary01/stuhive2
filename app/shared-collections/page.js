@@ -4,7 +4,7 @@ import { FolderHeart, Globe, ShieldCheck, Zap, Library } from "lucide-react";
 import CollectionGrid from "@/components/collections/CollectionGrid"; 
 
 // 🚀 PERFORMANCE & SEO: Cache this page at the edge for 1 hour. TTFB < 50ms.
-export const runtime = "edge";
+
 export const revalidate = 3600;
 
 const APP_URL = process.env.NEXTAUTH_URL || "https://www.stuhive.in";

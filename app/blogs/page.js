@@ -8,7 +8,7 @@ import BlogListServer from "./BlogListServer";
 const APP_URL = process.env.NEXTAUTH_URL || "https://www.stuhive.in";
 
 // ✅ 1. OPTIMIZATION: Enable aggressive edge caching for fast TTFB
-export const runtime = "edge";
+
 export const dynamic = "force-dynamic";
 export const revalidate = 60; 
 

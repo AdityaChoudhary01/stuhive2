@@ -17,7 +17,7 @@ import { Badge } from "@/components/ui/badge"; // 🚀 FIXED: Imported Badge
 // Icons
 import { ArrowRight, Users, FileText, Download, Trophy, Sparkles, Flame, FolderHeart, Library, Star, ShieldCheck, BadgeCheck, Crown, BookOpen, Lightbulb, School } from "lucide-react"; 
 
-export const runtime = "edge";
+
 export const revalidate = 30;
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://www.stuhive.in";

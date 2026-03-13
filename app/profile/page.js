@@ -6,7 +6,7 @@ import { getBlogsForUser } from "@/actions/blog.actions";
 import { getUserCollections } from "@/actions/collection.actions";
 import { getUserReports } from "@/actions/report.actions"; 
 
-export const runtime = "edge";
+
 
 // ✅ PERFORMANCE FIX: Enforces strict dynamic rendering for private routes
 export const dynamic = "force-dynamic";

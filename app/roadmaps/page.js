@@ -4,7 +4,7 @@ import { Globe, Search, User, Layers, Share2, Trophy, School, BookOpen, Lightbul
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 
-export const runtime = "edge";
+
 
 // 🚀 Directory Category Icons Helper
 const getCategoryDetails = (category) => {

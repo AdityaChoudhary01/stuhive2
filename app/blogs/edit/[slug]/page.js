@@ -4,7 +4,6 @@ import { auth } from "@/lib/auth";
 import EditBlogForm from "@/components/blog/EditBlogForm"; // Assuming this wraps or IS the PostBlogPage we just updated
 import { FaShieldAlt } from "react-icons/fa";
 
-export const runtime = "edge";
 
 export default async function EditBlogPage({ params }) {
   const { slug } = await params;

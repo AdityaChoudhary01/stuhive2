@@ -7,7 +7,6 @@ import { format } from "date-fns";
 import Link from "next/link";
 import ClonePlanButton from "@/components/planner/ClonePlanButton";
 
-export const runtime = "edge";
 
 // Category UI Configuration
 const CATEGORY_STYLES = {

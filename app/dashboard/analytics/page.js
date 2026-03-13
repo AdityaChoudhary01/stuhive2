@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { getCreatorAnalytics, getUserDashboardAnalytics } from "@/actions/analytics.actions";
 import AnalyticsClient from "./AnalyticsClient";
 
-export const runtime = "edge";
+
 
 export const metadata = {
   title: "Creator Analytics | StuHive Dashboard",

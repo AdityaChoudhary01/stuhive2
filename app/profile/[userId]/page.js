@@ -6,7 +6,7 @@ import { getPublicUserRoadmaps } from "@/actions/planner.actions";       // 🚀
 import { auth } from "@/lib/auth";
 import PublicProfileView from "@/components/profile/PublicProfileView";
 
-export const runtime = "edge";
+
 
 export const revalidate = 60;
 export const dynamic = "force-dynamic"; 

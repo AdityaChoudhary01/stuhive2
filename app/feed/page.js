@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { getUserFeed, getFollowingUsers } from "@/actions/user.actions"; 
 import FeedView from "@/components/feed/FeedView"; 
 
-export const runtime = "edge";
+
 
 export const dynamic = 'force-dynamic';
 

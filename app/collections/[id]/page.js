@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { removeNoteFromCollection } from "@/actions/collection.actions"; 
 import Link from "next/link";
 
-export const runtime = "edge";
+
 
 // 🚀 Dynamic Config Helper for Private View
 const getCategoryDetails = (cat) => {

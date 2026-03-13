@@ -8,7 +8,7 @@ import { Library, Search, LockKeyhole, FolderHeart, FileText, Crown, AlertCircle
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 
-export const runtime = "edge";
+
 import ReportNoteModal from "@/components/notes/ReportNoteModal";
 import { Crown as CrownIcon } from "lucide-react";
 

@@ -10,7 +10,7 @@ import { notes, users } from '@/db/schema';
 import Loader from "@/components/common/Loader"; 
 
 // 🚀 THE FIX: Cache this page at the edge for 1 hour. It will load in ~50ms globally.
-export const runtime = "edge";
+
 export const revalidate = 3600;
 
 // ✅ 1. HIGH-OCTANE SEO METADATA & SCHEMA

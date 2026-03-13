@@ -4,7 +4,7 @@ import { getPaginatedNotifications } from "@/actions/notification.actions";
 import NotificationClientPage from "@/components/notifications/NotificationClientPage";
 import { Bell } from "lucide-react";
 
-export const runtime = "edge";
+
 
 export const metadata = {
   title: "Notifications | StuHive",

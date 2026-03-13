@@ -32,7 +32,7 @@ import { generateReadUrl } from "@/lib/r2";
 // 🚀 ISR: Cache this page for 24 hours to boost Core Web Vitals/SEO
 export const revalidate = 86400;
 
-export const runtime = "edge";
+
 
 const APP_URL = process.env.NEXTAUTH_URL || "https://www.stuhive.in";
 const R2_PUBLIC_URL = process.env.NEXT_PUBLIC_R2_PUBLIC_URL || "";

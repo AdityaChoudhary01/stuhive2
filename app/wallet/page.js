@@ -10,7 +10,7 @@ import { formatDate } from "@/lib/utils";
 import Link from "next/link";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
-export const runtime = "edge";
+
 
 export const metadata = {
   title: "Creator Wallet | StuHive",

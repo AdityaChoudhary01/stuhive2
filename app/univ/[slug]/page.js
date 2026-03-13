@@ -5,7 +5,7 @@ import { School, MapPin, Globe, BookOpen } from "lucide-react";
 import Image from "next/image";
 import { auth } from "@/lib/auth";
 
-export const runtime = "edge";
+
 export const revalidate = 0; // Edge cache for 1 hour
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://www.stuhive.in";

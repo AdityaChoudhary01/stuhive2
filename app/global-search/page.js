@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button"; 
 
-export const runtime = "edge";
+
 import Link from "next/link";
 import { FileText, Rss, Users, Search as SearchIcon, PenTool, HelpCircle } from "lucide-react"; // 🚀 CHANGED TO HelpCircle
 

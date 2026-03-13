@@ -1,4 +1,4 @@
-export const runtime = "edge";
+
 
 import { getDb } from "@/lib/db";
 import { users, notes, collections, transactions, purchases, collectionNotes } from "@/db/schema";

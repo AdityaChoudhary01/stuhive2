@@ -3,7 +3,7 @@ import { auth } from "@/lib/auth";
 import RequestBoard from "@/components/requests/RequestBoard"; 
 import { HelpCircle } from "lucide-react"; 
 
-export const runtime = "edge";
+
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://www.stuhive.in";
 

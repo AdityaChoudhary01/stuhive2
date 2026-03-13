@@ -5,7 +5,7 @@ import NoteSortBar from "@/components/notes/NoteSortBar";
 import Pagination from "@/components/common/Pagination";
 import { FaSearch, FaRegFolderOpen, FaArrowLeft, FaFilter } from "react-icons/fa";
 
-export const runtime = "edge";
+
 import Link from "next/link";
 
 // 🚀 ENFORCED WWW DOMAIN

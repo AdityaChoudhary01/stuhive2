@@ -1,5 +1,5 @@
 export const dynamic = "force-dynamic";
-export const runtime = "edge";
+
 
 import { getDb } from "@/lib/db";
 import { blogs, collections, notes, opportunities, studyEvents, users } from "@/db/schema";

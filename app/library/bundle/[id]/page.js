@@ -5,7 +5,7 @@ import { History, ShieldCheck, ArrowLeft, Ghost } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
-export const runtime = "edge";
+
 
 export default async function BundleSnapshotPage({ params }) {
   // 🚀 Best practice for dynamic routes in Next.js 14/15

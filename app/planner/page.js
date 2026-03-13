@@ -4,7 +4,7 @@ import { getUserStudyPlans } from "@/actions/planner.actions";
 import PlannerClient from "@/components/planner/PlannerClient";
 import { Target } from "lucide-react"; 
 
-export const runtime = "edge";
+
 
 export const metadata = {
   title: "Study Planner | StuHive",
