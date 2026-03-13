@@ -6,7 +6,7 @@ pages_build_output_dir = ".open-next/cloudflare"
 # Asset configuration
 [assets]
 directory = ".open-next/cloudflare"
-binding = "ASSETS"
+binding = "ASSETS_BUCKET"
 
 # D1 database binding
 [[d1_databases]]
