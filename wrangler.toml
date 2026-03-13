@@ -1,38 +1,24 @@
 name = "stuhive"
 compatibility_date = "2024-03-20"
 compatibility_flags = ["nodejs_compat"]
-pages_build_output_dir = ".open-next/cloudflare"
 
-# D1 database binding
+# ---------------------------------------------------------
+# DO NOT DELETE THESE BINDINGS! 
+# Your local `npm run dev` needs them to work. 
+# You will STILL need to link these manually in the Cloudflare 
+# Dashboard for your production app.
+# ---------------------------------------------------------
+
 [[d1_databases]]
 binding = "DB"
 database_name = "stuhive"
 database_id = "7df9d1dc-6871-4b5c-a82a-3b7321da5966"
 migrations_dir = "drizzle/migrations"
 
-# R2 storage binding
 [[r2_buckets]]
 binding = "R2_BUCKET"
 bucket_name = "peernotez-files"
 
-# KV cache binding
 [[kv_namespaces]]
 binding = "KV_CACHE"
 id = "2cfb623bd8714165b068cb5a7acac608"
-
-# Non-sensitive environment variables
-[vars]
-NEXTAUTH_URL = "https://stuhive2.pages.dev"
-NEXT_PUBLIC_APP_URL = "https://stuhive2.pages.dev"
-
-NEXT_PUBLIC_MAIN_ADMIN_EMAIL = "adityanain55@gmail.com"
-ADMIN_EMAIL = "aadiwrld01@gmail.com"
-
-R2_ACCOUNT_ID = "c12887deddd9611efe0a0d6f6663d26c"
-R2_BUCKET_NAME = "peernotez-files"
-R2_ENDPOINT = "https://c12887deddd9611efe0a0d6f6663d26c.r2.cloudflarestorage.com"
-NEXT_PUBLIC_R2_PUBLIC_URL = "https://pub-367e1428b2244b639eb139da2272b5d0.r2.dev"
-
-GOOGLE_CLIENT_EMAIL = "peernotez-indexing-api@peernotez.iam.gserviceaccount.com"
-GOOGLE_CLIENT_ID = "222107236857-8kk0vhjcosn8shgqu0crvt94a5cbu260.apps.googleusercontent.com"
-BREVO_SENDER_EMAIL = "support@stuhive.in"
