@@ -4,7 +4,6 @@ import { getUserConversations } from "@/services/chat.service";
 import ChatList from "@/components/chat/ChatList";
 import NewChatDialog from "@/components/chat/NewChatDialog"; // 🔹 Import the new modal
 
-export const runtime = 'edge';
 
 export const metadata = {
   title: "Messages | StuHive",
