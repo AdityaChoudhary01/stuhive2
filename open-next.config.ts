@@ -1,5 +1,7 @@
 // @ts-nocheck
 import cache from "@opennextjs/cloudflare/kvCache";
+import { defineCloudflareConfig } from "@opennextjs/cloudflare";
+export default defineCloudflareConfig();
 
 const config = {
   default: {
