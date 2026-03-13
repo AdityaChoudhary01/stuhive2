@@ -1,6 +1,6 @@
 import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev';
 
-// 🚨 THIS IS THE FIX: It tells Next.js to load Cloudflare's local databases and bindings
+// 🚨 THIS IS THE FIX: Load the Cloudflare emulator ONLY in local development
 if (process.env.NODE_ENV === 'development') {
   await setupDevPlatform();
 }
@@ -25,6 +25,8 @@ const nextConfig = {
     serverActions: {
       bodySizeLimit: '15mb',
     },
+    // Shaves megabytes off the build size
+    optimizePackageImports: ['lucide-react', 'date-fns', 'recharts', 'framer-motion'],
   },
   webpack: (config, { isServer }) => {
     config.resolve.alias.canvas = false;

@@ -1,9 +1,8 @@
+export const runtime = "edge";
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { Rest } from "ably"; // 🚀 Ably supports Edge natively!
 
-export const runtime = "edge";
-export const dynamic = "force-dynamic";
 
 export async function GET(req) {
   try {

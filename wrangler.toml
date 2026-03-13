@@ -1,7 +1,7 @@
 name = "stuhive"
 compatibility_date = "2024-03-20"
 compatibility_flags = ["nodejs_compat"]
-pages_build_output_dir = ".vercel/output/static"
+pages_build_output_dir = ".open-next/cloudflare"
 
 # D1 database binding
 [[d1_databases]]
@@ -22,8 +22,8 @@ id = "2cfb623bd8714165b068cb5a7acac608"
 
 # Non-sensitive environment variables
 [vars]
-NEXTAUTH_URL = "http://localhost:3000"
-NEXT_PUBLIC_APP_URL = "http://localhost:3000"
+NEXTAUTH_URL = "https://stuhive2.pages.dev"
+NEXT_PUBLIC_APP_URL = "https://stuhive2.pages.dev"
 
 NEXT_PUBLIC_MAIN_ADMIN_EMAIL = "adityanain55@gmail.com"
 ADMIN_EMAIL = "aadiwrld01@gmail.com"

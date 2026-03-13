@@ -1,7 +1,7 @@
+export const runtime = "edge";
 import { NextResponse } from "next/server";
 import { getTopUniversities } from "@/actions/university.actions";
 
-export const runtime = "edge";
 
 export async function GET() {
   try {
