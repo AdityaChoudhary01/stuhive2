@@ -1,0 +1,36 @@
+[
+  {
+    "_id": "69ad7f18b0b96859df03cea0",
+    "slug": "aktu",
+    "updatedAt": "2026-03-08T15:16:46.458Z",
+    "keywords": [],
+    "metaDescription": "Download AKTU semester notes, previous year question papers (PYQs), and handwritten study material for B.Tech, MBA, and MCA. Verified resources for all AKTU affiliated colleges.",
+    "metaTitle": "AKTU Notes, PYQs & B.Tech Study Material | StuHive Hub",
+    "website": "https://aktu.ac.in",
+    "location": "Lucknow, Uttar Pradesh",
+    "coverImage": "https://cdn.stuhive.in/universities/covers/1772983001421-cover.webp",
+    "logo": "https://cdn.stuhive.in/universities/logos/1772982997009-logo.webp",
+    "description": "Welcome to the dedicated Dr. A.P.J. Abdul Kalam Technical University (AKTU) Academic Hub. This portal is specifically designed for students across all AKTU affiliated colleges in Uttar Pradesh.\n\nAccess a comprehensive library of handwritten B.Tech notes, Quantum series summaries, and AKTU Previous Year Question Papers (PYQs). Whether you are studying for the first-year common subjects or specialized engineering branches like CSE, IT, ME, or ECE, our community-driven repository ensures you have the latest syllabus-aligned materials to excel in your end-semester examinations.",
+    "name": "Aktu",
+    "__v": 0,
+    "createdAt": "2026-03-08T13:52:49.753Z",
+    "isActive": true
+  },
+  {
+    "_id": "69ad93a200b8632def05b531",
+    "slug": "galgotias-university",
+    "updatedAt": "2026-03-08T15:20:01.949Z",
+    "metaDescription": "Access handwritten notes, previous year question papers (PYQs), and exam resources for Galgotias University (GU). Download B.Tech, MBA, and Law study materials curated by students.",
+    "metaTitle": "Galgotias University Notes, PYQs & Study Material | StuHive Hub",
+    "website": "https://www.galgotiasuniversity.edu.in",
+    "location": "Greater Noida, Uttar Pradesh",
+    "coverImage": "https://cdn.stuhive.in/universities/covers/1772983100180-cover.webp",
+    "logo": "https://cdn.stuhive.in/universities/logos/1772983093532-logo.webp",
+    "description": "Welcome to the official Galgotias University (GU) Academic Hub on StuHive. This specialized portal is the central repository for students across all schools, including Computing Science & Engineering, Business, and Law.\n\nExplore a vast collection of semester-wise handwritten notes, official GU model papers, and Previous Year Question Papers (PYQs). Our community-driven archive is designed to help students stay ahead of the syllabus and prepare effectively for mid-term and end-term examinations with verified resources.",
+    "name": "Galgotias University",
+    "__v": 0,
+    "createdAt": "2026-03-08T15:20:01.949Z",
+    "keywords": [],
+    "isActive": true
+  }
+]

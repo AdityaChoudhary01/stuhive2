@@ -1,0 +1,95 @@
+[
+  {
+    "_id": "699c1b928c84946ef0e42ff1",
+    "user": "699b4b860c69efac7842364f",
+    "name": "Database Management Systems (DBMS) Premium Notes",
+    "notes": [
+      "69aeea8d700f0c82435e5c68",
+      "69aeea49f31e9a042694475b",
+      "69aeea03700f0c82435e5c38",
+      "69aee95f2d6f1c9356d31dac",
+      "69aee9b9dc3ea113a1182b56"
+    ],
+    "createdAt": "2026-02-23T09:19:14.179Z",
+    "updatedAt": "2026-03-09T16:03:55.361Z",
+    "__v": 8,
+    "visibility": "public",
+    "description": "Master DBMS for Pune University exams. This bundle includes chapter-wise handwritten PDFs, SQL query cheat sheets, ER diagrams, and solved PYQs for guaranteed high grades.",
+    "slug": "database-management-systems-dbms-premium-notes",
+    "category": "University",
+    "university": "Aktu",
+    "isPremium": true,
+    "price": 69,
+    "purchasedBy": [
+      "6999f1a6335e35fbefd6dd9f"
+    ],
+    "isArchived": false
+  },
+  {
+    "_id": "69ae4c577d27c91ef9e850aa",
+    "user": "699b4b860c69efac7842364f",
+    "name": "Data Structures & Algorithms (DSA) - Unit 1 & 2 Complete Notes",
+    "category": "University",
+    "university": "Aktu",
+    "visibility": "public",
+    "description": "Premium Data Structures & Algorithms (DSA) notes for Unit 1 & 2. Covers time complexity, arrays, linked lists, and stacks. Perfect for quick exam revision and placement prep!",
+    "notes": [
+      "699d79bec2f7a122b459d027",
+      "699da68b78eaac079f8b78b4"
+    ],
+    "isPremium": true,
+    "price": 69,
+    "purchasedBy": [
+      "6999f1a6335e35fbefd6dd9f"
+    ],
+    "createdAt": "2026-03-09T04:28:07.517Z",
+    "updatedAt": "2026-03-09T16:15:22.212Z",
+    "slug": "data-structures-algorithms-dsa-unit-1-2-complete-notes",
+    "__v": 4,
+    "isArchived": false
+  },
+  {
+    "_id": "699b75e13723dd209365a130",
+    "user": "6999f1a6335e35fbefd6dd9f",
+    "name": "AKTU B.Tech Semester Exams 2025-26 | Premium Study Material",
+    "notes": [
+      "699b71402aa3775bfa33905b",
+      "69aeeeab2067360e950e05a3",
+      "69aeee4173c58d48f694df7b",
+      "69aeedf9b3996ea0b0476da5",
+      "69aeed89dc3ea113a1182bc3",
+      "699b50cc141be3b3b16cde91",
+      "699a038d775428288ef6ea3d",
+      "699a035056f7f5e5446c510d"
+    ],
+    "createdAt": "2026-02-22T21:32:17.023Z",
+    "updatedAt": "2026-03-09T16:22:03.938Z",
+    "__v": 8,
+    "visibility": "public",
+    "description": "Complete AKTU B.Tech semester exam notes for 2025-2026. Get simple, short, and highly optimized study materials, important topics, and quick revision guides all in one place to ace your exams!",
+    "slug": "aktu-b-tech-semester-exams-2025-26-premium-study-material",
+    "university": "Aktu",
+    "category": "University",
+    "isPremium": false,
+    "price": 0,
+    "purchasedBy": [],
+    "isArchived": false
+  },
+  {
+    "_id": "699ecf7f436e06fca4974eda",
+    "user": "6999fe84ad6b48a9d9b2a766",
+    "name": "Renewable Energy Resource(RER) All notes Bundle",
+    "visibility": "public",
+    "description": "Renewable Energy Resource(RER) All notes Bundle  learn from a single place don't need to search for notes unit by unit or topic by topic somewhere else",
+    "notes": [
+      "699c4dc9d46db5a80ca99cd4",
+      "699c4da9a65f2d80ff15e6fb",
+      "699c4d87d13353811267c775",
+      "699c4cff1dbb176ce0c0d0f2"
+    ],
+    "createdAt": "2026-02-25T10:31:27.107Z",
+    "updatedAt": "2026-02-25T10:49:11.739Z",
+    "slug": "renewable-energy-resource-rer-all-notes-bundle",
+    "__v": 0
+  }
+]

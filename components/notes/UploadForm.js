@@ -1,0 +1,418 @@
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
+import { Loader2, UploadCloud, FileText, BookOpen, School, GraduationCap, CalendarDays, Trophy, Lightbulb } from "lucide-react";
+import { getUploadUrl } from "@/actions/upload.actions"; 
+import { createNote } from "@/actions/note.actions";
+import { generatePdfThumbnail } from "@/utils/generateThumbnail"; 
+import { PDFDocument } from 'pdf-lib'; // 🚀 NEW: Import pdf-lib
+
+// 🚀 DYNAMIC LABEL CONFIGURATION
+const CATEGORY_CONFIG = {
+  "University": {
+    instLabel: "University / College", instIcon: <School className="w-4 h-4 text-blue-400" />, instPlace: "e.g. Mumbai University",
+    courseLabel: "Course / Degree", courseIcon: <GraduationCap className="w-4 h-4 text-purple-400" />, coursePlace: "e.g. B.Tech CSE",
+    subjectLabel: "Subject", subjectPlace: "e.g. Data Structures",
+    yearLabel: "Year / Semester", yearPlace: "e.g. 2nd Year"
+  },
+  "School": {
+    instLabel: "Board / School", instIcon: <School className="w-4 h-4 text-blue-400" />, instPlace: "e.g. CBSE / DPS",
+    courseLabel: "Class / Standard", courseIcon: <BookOpen className="w-4 h-4 text-purple-400" />, coursePlace: "e.g. Class 12th",
+    subjectLabel: "Subject", subjectPlace: "e.g. Physics",
+    yearLabel: "Academic Year", yearPlace: "e.g. 2024"
+  },
+  "Competitive Exams": {
+    instLabel: "Exam Body / Category", instIcon: <Trophy className="w-4 h-4 text-amber-400" />, instPlace: "e.g. UPSC / SSC / JEE",
+    courseLabel: "Specific Exam Name", courseIcon: <FileText className="w-4 h-4 text-purple-400" />, coursePlace: "e.g. Civil Services / CGL",
+    subjectLabel: "Paper / Subject", subjectPlace: "e.g. GS Paper 1 / Quant",
+    yearLabel: "Target Year", yearPlace: "e.g. 2025"
+  },
+  "Other": {
+    instLabel: "Organization / Context", instIcon: <Lightbulb className="w-4 h-4 text-blue-400" />, instPlace: "e.g. Google Cloud / General",
+    courseLabel: "Program / Certification", courseIcon: <GraduationCap className="w-4 h-4 text-purple-400" />, coursePlace: "e.g. AWS Architect",
+    subjectLabel: "Topic", subjectPlace: "e.g. Networking",
+    yearLabel: "Year", yearPlace: "e.g. 2024"
+  }
+};
+
+export default function UploadForm() {
+  const { data: session } = useSession();
+  const router = useRouter();
+  const { toast } = useToast();
+  
+  const [loading, setLoading] = useState(false);
+  const [uploadStatus, setUploadStatus] = useState(""); 
+  const [file, setFile] = useState(null);
+  
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+    category: "University", 
+    university: "",
+    course: "",
+    subject: "",
+    year: "",
+    isPaid: false,
+    price: 0,
+    previewPages: 3,
+  });
+
+  const labels = CATEGORY_CONFIG[formData.category];
+
+  const handleFileChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      const selectedFile = e.target.files[0];
+      const allowedTypes = [
+        "application/pdf",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+        "application/vnd.ms-powerpoint",
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "application/vnd.ms-excel",
+        "text/plain"
+      ];
+
+      if (!allowedTypes.includes(selectedFile.type)) {
+        toast({ title: "Unsupported Format", description: "Please upload PDF, Word, PPT, or Excel.", variant: "destructive" });
+        return;
+      }
+      if (selectedFile.size > 25 * 1024 * 1024) { // Increased to 25MB for premium notes
+        toast({ title: "File Too Large", description: "Max limit is 25MB.", variant: "destructive" });
+        return;
+      }
+      setFile(selectedFile);
+    }
+  };
+
+  // 🚀 NEW: Function to slice the PDF on the frontend
+  const generatePreviewPdf = async (originalFile, pagesToKeep) => {
+    try {
+      const arrayBuffer = await originalFile.arrayBuffer();
+      const pdfDoc = await PDFDocument.load(arrayBuffer);
+      const previewPdf = await PDFDocument.create();
+      
+      const totalPages = pdfDoc.getPageCount();
+      const pagesToCopyCount = Math.min(pagesToKeep, totalPages);
+      
+      if (pagesToCopyCount === 0) return null;
+
+      const pageIndices = Array.from({ length: pagesToCopyCount }, (_, i) => i);
+      const copiedPages = await previewPdf.copyPages(pdfDoc, pageIndices);
+      copiedPages.forEach((page) => previewPdf.addPage(page));
+      
+      const pdfBytes = await previewPdf.save();
+      const previewBlob = new Blob([pdfBytes], { type: 'application/pdf' });
+      
+      return new File([previewBlob], `preview_${originalFile.name}`, { type: 'application/pdf' });
+    } catch (error) {
+      console.error("Failed to generate preview PDF:", error);
+      return null;
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (loading) return; 
+    if (!file) return toast({ title: "File Required", description: "Please select a document to upload.", variant: "destructive" });
+
+    if (formData.isPaid && (formData.price < 10 || formData.price > 1000)) {
+      return toast({ title: "Invalid Price", description: "Price must be between ₹10 and ₹1000.", variant: "destructive" });
+    }
+
+    setLoading(true);
+    try {
+      let thumbnailFile = null;
+      let previewFile = null;
+
+      if (file.type === "application/pdf") {
+          setUploadStatus("Processing PDF...");
+          thumbnailFile = await generatePdfThumbnail(file);
+          
+          // 🚀 IF PAID: Generate the strict preview file
+          if (formData.isPaid) {
+              setUploadStatus("Generating Secure Preview...");
+              previewFile = await generatePreviewPdf(file, formData.previewPages);
+          }
+      }
+
+      setUploadStatus("Preparing Upload Slots...");
+      // 🚀 Pass previewFile boolean to getUploadUrl to get a 3rd upload slot
+      const { success, uploadUrl, fileKey, thumbUrl, thumbKey, previewUploadUrl, previewKey, error } = 
+        await getUploadUrl(file.name, file.type, !!thumbnailFile, !!previewFile);
+      
+      if (!success) throw new Error(error);
+
+      setUploadStatus("Uploading Document...");
+      
+      // Upload Main File
+      const uploadRes = await fetch(uploadUrl, {
+        method: "PUT",
+        headers: { "Content-Type": file.type },
+        body: file,
+      });
+      if (!uploadRes.ok) throw new Error("Upload failed.");
+
+      // Upload Thumbnail
+      if (thumbnailFile && thumbUrl) {
+          await fetch(thumbUrl, { method: "PUT", headers: { "Content-Type": "image/webp" }, body: thumbnailFile });
+      }
+
+      // 🚀 Upload Secure Preview File
+      if (previewFile && previewUploadUrl) {
+          setUploadStatus("Uploading Preview...");
+          await fetch(previewUploadUrl, { method: "PUT", headers: { "Content-Type": "application/pdf" }, body: previewFile });
+      }
+
+      setUploadStatus("Finalizing...");
+      const fileData = {
+        fileName: file.name,
+        fileType: file.type,
+        fileSize: file.size,
+        fileKey: fileKey,
+        thumbnailKey: thumbKey || null,
+        previewKey: previewKey || null, // 🚀 Save preview key to DB
+      };
+
+      const res = await createNote({ ...formData, fileData, userId: session.user.id });
+
+      if (res.success) {
+        setUploadStatus("Redirecting...");
+        toast({ title: "Success!", description: formData.isPaid ? "Your premium note is live!" : "Note published successfully!" });
+        router.push(`/notes/${res.noteSlug || res.noteId}`);
+      } else {
+        throw new Error(res.error);
+      }
+
+    } catch (err) {
+      toast({ title: "Error", description: err.message, variant: "destructive" });
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="w-full max-w-3xl mx-auto p-4 sm:p-6 md:p-10 rounded-2xl md:rounded-[2rem] bg-gradient-to-br from-background to-secondary/10 border shadow-2xl backdrop-blur-xl">
+      
+      {/* Header */}
+      <div className="mb-6 md:mb-8 text-center md:text-left">
+        <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight mb-2">Upload Material</h1>
+        <p className="text-muted-foreground text-xs md:text-base">Share your knowledge and help others ace their exams.</p>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
+        
+        {/* --- Section 1: Category Selection --- */}
+        <div className="space-y-4">
+          <h2 className="text-xs md:text-sm font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">
+            1. Material Type
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {Object.keys(CATEGORY_CONFIG).map((cat) => (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setFormData({ ...formData, category: cat })}
+                className={`p-3 rounded-xl border transition-all text-xs font-bold flex flex-col items-center gap-2 ${
+                  formData.category === cat 
+                  ? "bg-amber-500/10 border-amber-500/50 text-amber-500 shadow-[0_0_15px_rgba(245,158,11,0.2)]" 
+                  : "bg-secondary/20 border-white/5 text-muted-foreground hover:bg-secondary/40 hover:text-white"
+                }`}
+              >
+                {CATEGORY_CONFIG[cat].instIcon}
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* --- Section 2: Note Details --- */}
+        <div className="space-y-4">
+          <h2 className="text-xs md:text-sm font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
+            2. Note Details
+          </h2>
+          
+          <div className="space-y-4">
+            <div className="space-y-1.5">
+              <Label className="text-sm font-semibold text-foreground/90">Title</Label>
+              <Input 
+                required
+                placeholder="e.g. Computer Networks Chapter 1" 
+                className="h-11 md:h-12 rounded-xl bg-secondary/30 border-secondary focus-visible:ring-pink-500/30 transition-all"
+                value={formData.title}
+                onChange={e => setFormData({...formData, title: e.target.value})}
+              />
+            </div>
+
+            <div className="space-y-1.5">
+              <Label className="text-sm font-semibold text-foreground/90">Description</Label>
+              <Textarea 
+                required
+                placeholder="Briefly summarize the key topics..." 
+                className="min-h-[100px] md:min-h-[120px] rounded-xl bg-secondary/30 border-secondary focus-visible:ring-pink-500/30 transition-all resize-y"
+                value={formData.description}
+                onChange={e => setFormData({...formData, description: e.target.value})}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* --- Section 3: Academic Info --- */}
+        <div className="space-y-4">
+          <h2 className="text-xs md:text-sm font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            3. Academic Context
+          </h2>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+            <div className="space-y-1.5">
+              <Label className="flex items-center gap-2 text-sm font-semibold text-foreground/90">
+                {labels.instIcon} {labels.instLabel}
+              </Label>
+              <Input required placeholder={labels.instPlace} className="h-11 md:h-12 rounded-xl bg-secondary/30 border-secondary focus-visible:ring-blue-500/30 transition-all" value={formData.university} onChange={e => setFormData({...formData, university: e.target.value})} />
+            </div>
+            <div className="space-y-1.5">
+              <Label className="flex items-center gap-2 text-sm font-semibold text-foreground/90">
+                {labels.courseIcon} {labels.courseLabel}
+              </Label>
+              <Input required placeholder={labels.coursePlace} className="h-11 md:h-12 rounded-xl bg-secondary/30 border-secondary focus-visible:ring-purple-500/30 transition-all" value={formData.course} onChange={e => setFormData({...formData, course: e.target.value})} />
+            </div>
+            <div className="space-y-1.5">
+              <Label className="flex items-center gap-2 text-sm font-semibold text-foreground/90">
+                <BookOpen className="w-4 h-4 text-pink-400" /> {labels.subjectLabel}
+              </Label>
+              <Input required placeholder={labels.subjectPlace} className="h-11 md:h-12 rounded-xl bg-secondary/30 border-secondary focus-visible:ring-pink-500/30 transition-all" value={formData.subject} onChange={e => setFormData({...formData, subject: e.target.value})} />
+            </div>
+            <div className="space-y-1.5">
+              <Label className="flex items-center gap-2 text-sm font-semibold text-foreground/90">
+                <CalendarDays className="w-4 h-4 text-orange-400" /> {labels.yearLabel}
+              </Label>
+              <Input required placeholder={labels.yearPlace} className="h-11 md:h-12 rounded-xl bg-secondary/30 border-secondary focus-visible:ring-orange-500/30 transition-all" value={formData.year} onChange={e => setFormData({...formData, year: e.target.value})} />
+            </div>
+          </div>
+        </div>
+
+        {/* --- Section 4: Monetization --- */}
+        <div className="space-y-4">
+          <h2 className="text-xs md:text-sm font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-500">
+            4. Monetization (Earn 80% Revenue)
+          </h2>
+          
+          <div className="p-5 border border-emerald-500/20 bg-emerald-500/5 rounded-2xl space-y-5">
+            <div className="flex items-center gap-3 md:gap-4">
+              <Button
+                type="button"
+                variant={!formData.isPaid ? "default" : "outline"}
+                onClick={() => setFormData({...formData, isPaid: false, price: 0})}
+                className={`flex-1 ${!formData.isPaid ? "bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg shadow-emerald-500/25" : "border-emerald-500/30 text-emerald-500 hover:bg-emerald-500/10"}`}
+              >
+                Free for Community
+              </Button>
+              <Button
+                type="button"
+                variant={formData.isPaid ? "default" : "outline"}
+                onClick={() => setFormData({...formData, isPaid: true, price: 49})}
+                className={`flex-1 ${formData.isPaid ? "bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg shadow-emerald-500/25" : "border-emerald-500/30 text-emerald-500 hover:bg-emerald-500/10"}`}
+              >
+                Sell Note
+              </Button>
+            </div>
+
+            {formData.isPaid && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 animate-in fade-in slide-in-from-top-2">
+                <div className="space-y-1.5">
+                  <Label className="text-sm font-semibold text-foreground/90">Price (INR)</Label>
+                  <div className="relative">
+                    <span className="absolute left-3 top-1/2 -translate-y-1/2 font-bold text-muted-foreground">₹</span>
+                    <Input 
+                      type="number" min="10" max="1000" required={formData.isPaid}
+                      value={formData.price}
+                      onChange={e => setFormData({...formData, price: Number(e.target.value)})}
+                      className="pl-7 h-11 md:h-12 bg-black/50 border-emerald-500/30 focus-visible:ring-emerald-500 rounded-xl"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-1.5">
+                  <Label className="text-sm font-semibold text-foreground/90">Free Preview Pages</Label>
+                  <Input 
+                    type="number" min="1" max="10" required={formData.isPaid}
+                    value={formData.previewPages}
+                    onChange={e => setFormData({...formData, previewPages: Number(e.target.value)})}
+                    className="h-11 md:h-12 bg-black/50 border-emerald-500/30 focus-visible:ring-emerald-500 rounded-xl"
+                  />
+                  <p className="text-[10px] text-muted-foreground mt-1">Pages visible before purchase block.</p>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* --- Section 5: File Upload --- */}
+        <div className="space-y-4">
+          <h2 className="text-xs md:text-sm font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
+            5. Document
+          </h2>
+          
+          <div className="group relative border-2 border-dashed border-border rounded-2xl md:rounded-3xl p-6 md:p-12 transition-all hover:border-indigo-500/50 hover:bg-indigo-500/5 cursor-pointer overflow-hidden bg-secondary/20">
+            <input 
+              type="file" 
+              required
+              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-30" 
+              onChange={handleFileChange} 
+            />
+            <div className="flex flex-col items-center justify-center text-center">
+              {file ? (
+                <div className="flex flex-col items-center gap-3 animate-in fade-in zoom-in duration-300">
+                  <div className="p-3 md:p-4 bg-indigo-500/20 rounded-full">
+                    <FileText className="w-8 h-8 md:w-10 md:h-10 text-indigo-400" />
+                  </div>
+                  <div className="space-y-1">
+                      <p className="font-bold text-sm md:text-base text-foreground truncate max-w-[200px] md:max-w-[350px]">{file.name}</p>
+                      <p className="text-[10px] md:text-xs font-medium text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full inline-block">
+                        {(file.size / (1024 * 1024)).toFixed(2)} MB Ready
+                      </p>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex flex-col items-center transform transition-transform group-hover:-translate-y-1">
+                  <div className="p-3 md:p-4 bg-secondary/50 rounded-full mb-3 md:mb-4 group-hover:bg-indigo-500/10 transition-colors">
+                    <UploadCloud className="w-8 h-8 md:w-10 md:h-10 text-muted-foreground group-hover:text-indigo-400 transition-colors" />
+                  </div>
+                  <p className="font-bold text-base md:text-lg text-foreground/90">Tap to browse</p>
+                  <p className="text-[11px] md:text-xs text-muted-foreground mt-1.5 md:mt-2 max-w-[200px] md:max-w-[250px] leading-relaxed">
+                      PDF, DOCX, PPTX, XLSX, TXT (Max 25MB)
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* --- Submit Button --- */}
+        <Button 
+          type="submit" 
+          disabled={loading} 
+          className="w-full h-12 md:h-14 rounded-xl md:rounded-2xl text-sm md:text-base font-bold text-white border-0 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 shadow-[0_0_30px_-10px_rgba(236,72,153,0.4)] transition-all"
+        >
+          {loading ? (
+            <div className="flex items-center gap-2 md:gap-3">
+              <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" />
+              <span className="tracking-wide">{uploadStatus}</span>
+            </div>
+          ) : (
+            <div className="flex items-center gap-2 tracking-wide">
+              <UploadCloud className="w-4 h-4 md:w-5 md:h-5" />
+              <span>{formData.isPaid ? "Publish Premium Note" : "Publish Free Note"}</span>
+            </div>
+          )}
+        </Button>
+      </form>
+    </div>
+  );
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "699b50e96d819ce01caf51e1",
+    "participants": [
+      "699b41fb343a35a525f5c033",
+      "6999f5c97fd0a3284057c63d"
+    ],
+    "lastMessage": null,
+    "pinnedMessage": null,
+    "createdAt": "2026-02-22T18:54:33.168Z",
+    "updatedAt": "2026-02-22T18:54:33.168Z",
+    "__v": 0
+  },
+  {
+    "_id": "69a5a34e646231ba54b603bd",
+    "participants": [
+      "69a59b7149a8325ae36b3132",
+      "699b4b860c69efac7842364f"
+    ],
+    "lastMessage": "69a6e022c101c47e50604dea",
+    "pinnedMessage": null,
+    "createdAt": "2026-03-02T14:48:46.025Z",
+    "updatedAt": "2026-03-03T13:20:34.952Z",
+    "__v": 0
+  },
+  {
+    "_id": "69a6dfe7c101c47e50604db9",
+    "participants": [
+      "69a5b515c402cb76b4590931",
+      "699b4b860c69efac7842364f"
+    ],
+    "lastMessage": "69a6e04ec101c47e50604e17",
+    "pinnedMessage": null,
+    "createdAt": "2026-03-03T13:19:35.088Z",
+    "updatedAt": "2026-03-03T13:21:18.929Z",
+    "__v": 0
+  }
+]

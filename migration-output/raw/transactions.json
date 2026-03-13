@@ -1,0 +1,62 @@
+[
+  {
+    "_id": "69abeb3aa3c3d8c065a48022",
+    "buyer": "699b4b860c69efac7842364f",
+    "seller": "6999f1a6335e35fbefd6dd9f",
+    "note": "69abdf367202dc8fa00a42a5",
+    "amount": 49,
+    "adminFee": 9.8,
+    "sellerEarnings": 39.2,
+    "razorpayOrderId": "order_SOHTVu5zjqiAcf",
+    "status": "completed",
+    "createdAt": "2026-03-07T09:09:14.077Z",
+    "updatedAt": "2026-03-07T09:10:04.097Z",
+    "__v": 0,
+    "razorpayPaymentId": "pay_SOHU82J4cQ44Rx"
+  },
+  {
+    "_id": "69ac5189c71afc85b284d062",
+    "buyer": "6999f1a6335e35fbefd6dd9f",
+    "seller": "699b4b860c69efac7842364f",
+    "note": "699d79bec2f7a122b459d027",
+    "amount": 49,
+    "adminFee": 9.8,
+    "sellerEarnings": 39.2,
+    "razorpayOrderId": "order_SOOv3ewsD6ES1C",
+    "status": "completed",
+    "createdAt": "2026-03-07T16:25:45.660Z",
+    "updatedAt": "2026-03-07T16:26:27.455Z",
+    "__v": 0,
+    "razorpayPaymentId": "pay_SOOvUeuEnF4zzT"
+  },
+  {
+    "_id": "69ae4dc0350de6f21d11bc49",
+    "buyer": "6999f1a6335e35fbefd6dd9f",
+    "seller": "699b4b860c69efac7842364f",
+    "bundle": "69ae4c577d27c91ef9e850aa",
+    "amount": 89,
+    "adminFee": 17.8,
+    "sellerEarnings": 71.2,
+    "razorpayOrderId": "order_SOzr62EztoofMc",
+    "status": "completed",
+    "createdAt": "2026-03-09T04:34:08.832Z",
+    "updatedAt": "2026-03-09T04:34:41.219Z",
+    "__v": 0,
+    "razorpayPaymentId": "pay_SOzrOEAMUFGcWe"
+  },
+  {
+    "_id": "69aeda1ad3898922c788b2f7",
+    "buyer": "6999f1a6335e35fbefd6dd9f",
+    "seller": "699b4b860c69efac7842364f",
+    "bundle": "699c1b928c84946ef0e42ff1",
+    "amount": 49,
+    "adminFee": 9.8,
+    "sellerEarnings": 39.2,
+    "razorpayOrderId": "order_SPA3dpGqQ5MToI",
+    "status": "completed",
+    "createdAt": "2026-03-09T14:32:58.313Z",
+    "updatedAt": "2026-03-09T14:33:32.075Z",
+    "__v": 0,
+    "razorpayPaymentId": "pay_SPA3wZQ54EULoY"
+  }
+]

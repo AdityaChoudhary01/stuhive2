@@ -1,0 +1,14 @@
+[
+  {
+    "_id": "69ae6168183fdd49c029202c",
+    "reporter": "6999f1a6335e35fbefd6dd9f",
+    "targetNote": "69ad9607ea3e00d85a16edf2",
+    "targetBundle": null,
+    "reason": "Spam",
+    "details": "fraud",
+    "status": "resolved",
+    "createdAt": "2026-03-09T05:58:00.842Z",
+    "updatedAt": "2026-03-09T09:34:18.524Z",
+    "__v": 0
+  }
+]

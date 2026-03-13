@@ -1,0 +1,484 @@
+[
+  {
+    "_id": "6999fc77ad89c11a7aa8b053",
+    "name": "Admin",
+    "email": "adityanain55@gmail.com",
+    "avatar": "https://cdn.stuhive.in/avatars/6999fc77ad89c11a7aa8b053/1771856552942-avatar.webp",
+    "avatarKey": "avatars/6999fc77ad89c11a7aa8b053/1771856552942-avatar.webp",
+    "bio": "Aditya Choudhary, Founder @ StuHive. Curating India's largest decentralized archive of B.Tech study materials, DSA guides, and competitive exam bundles. Dedicated to democratizing education by providing students with top-tier handwritten PDFs, university PYQs, and expert roadmaps.",
+    "university": "GNIOT, AKTU",
+    "location": "Greater Noida, India",
+    "savedNotes": [],
+    "role": "admin",
+    "showLastSeen": true,
+    "following": [],
+    "followers": [],
+    "noteCount": 0,
+    "blogCount": 3,
+    "lastSeen": "2026-03-11T17:30:19.077Z",
+    "createdAt": "2026-02-21T18:41:59.938Z",
+    "updatedAt": "2026-03-11T17:30:19.078Z",
+    "__v": 0
+  },
+  {
+    "_id": "69a6daaa66d3b8fcb2891b10",
+    "name": "Veenus Kumar",
+    "email": "veenuskumar196@gmail.com",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLbHx_-mLgWBg1NKXgcW4EnSf-4x27NCyAr3ESytY3Ja8DZ=s96-c",
+    "avatarKey": "",
+    "bio": "",
+    "university": "",
+    "location": "",
+    "savedNotes": [],
+    "role": "user",
+    "showLastSeen": true,
+    "following": [],
+    "followers": [],
+    "noteCount": 0,
+    "blogCount": 0,
+    "hivePoints": 0,
+    "badges": [],
+    "lastSeen": "2026-03-03T12:57:14.015Z",
+    "createdAt": "2026-03-03T12:57:14.019Z",
+    "updatedAt": "2026-03-03T12:57:14.019Z",
+    "__v": 0
+  },
+  {
+    "_id": "69a91c49023a20501dab0101",
+    "name": "Srashti Rathi",
+    "email": "srashtirathi22@gmail.com",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocI8hmCq7VuEv6_gokSJofNIbBCOUpTv9g04LT91no-AJBPnKg=s96-c",
+    "avatarKey": "",
+    "bio": "",
+    "university": "",
+    "location": "",
+    "savedNotes": [],
+    "role": "user",
+    "showLastSeen": true,
+    "following": [
+      "6999f1a6335e35fbefd6dd9f",
+      "6999fe84ad6b48a9d9b2a766"
+    ],
+    "followers": [
+      "6999fe84ad6b48a9d9b2a766"
+    ],
+    "noteCount": 0,
+    "blogCount": 0,
+    "hivePoints": 0,
+    "badges": [],
+    "lastSeen": "2026-03-05T06:01:45.345Z",
+    "createdAt": "2026-03-05T06:01:45.346Z",
+    "updatedAt": "2026-03-07T08:11:21.368Z",
+    "__v": 3
+  },
+  {
+    "_id": "699a063a4e77e5813c143ae9",
+    "name": "Aadi Wrld",
+    "email": "aadiwrld01@gmail.com",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLrvV9C38ixGhHiMFb6RmXgwcmeEqVmNnXKjqjvPLHFG7XfdPc=s96-c",
+    "avatarKey": "",
+    "bio": "Computer Science Student & Platform Admin at StuHive. I love writing about AI, algorithms, and building tech communities. Feel free to explore my premium DSA notes!",
+    "university": "KIET Group of Institutions (AKTU)",
+    "location": "Delhi NCR, India",
+    "savedNotes": [
+      "699b73d92aa3775bfa3390bf"
+    ],
+    "role": "admin",
+    "showLastSeen": true,
+    "following": [
+      "699b4b860c69efac7842364f",
+      "69a59b7149a8325ae36b3132"
+    ],
+    "followers": [
+      "699b4b860c69efac7842364f"
+    ],
+    "noteCount": 3,
+    "blogCount": 2,
+    "lastSeen": "2026-03-10T08:25:24.857Z",
+    "createdAt": "2026-02-21T19:23:38.722Z",
+    "updatedAt": "2026-03-11T06:49:36.579Z",
+    "__v": 27,
+    "hivePoints": 37,
+    "badges": [],
+    "savedOpportunities": [
+      "69af165cd1f4eed53ba48ea3"
+    ]
+  },
+  {
+    "_id": "69a59b7149a8325ae36b3132",
+    "name": "Lucky Malik",
+    "email": "luckymalik23jnn@gmail.com",
+    "avatar": "https://cdn.stuhive.in/avatars/69a59b7149a8325ae36b3132/1772461721248-avatar.webp",
+    "avatarKey": "avatars/69a59b7149a8325ae36b3132/1772461721248-avatar.webp",
+    "bio": "Namsta jii",
+    "university": "Apna ghr",
+    "location": "Chandanhari",
+    "savedNotes": [
+      "699da68b78eaac079f8b78b4"
+    ],
+    "role": "admin",
+    "showLastSeen": true,
+    "following": [
+      "699b4b860c69efac7842364f"
+    ],
+    "followers": [
+      "699a063a4e77e5813c143ae9"
+    ],
+    "noteCount": 0,
+    "blogCount": 1,
+    "hivePoints": 20,
+    "badges": [],
+    "lastSeen": "2026-03-02T16:11:27.018Z",
+    "createdAt": "2026-03-02T14:15:13.269Z",
+    "updatedAt": "2026-03-06T14:41:08.619Z",
+    "__v": 3
+  },
+  {
+    "_id": "6999f9d3ad6b48a9d9b2a70c",
+    "name": "Sagar Choudhary",
+    "email": "bavocor377@mvpmedix.com",
+    "password": "$2b$10$TpDklcNj43vm0L54eAu/aenyG8ZZSl.b9xBtHCPd6SQ08TVperF52",
+    "avatar": "https://cdn.stuhive.in/avatars/6999f9d3ad6b48a9d9b2a70c/1771698671541-avatar.webp",
+    "avatarKey": "avatars/6999f9d3ad6b48a9d9b2a70c/1771698671541-avatar.webp",
+    "bio": "Final year IT undergrad passionate about Web3, full-stack development, and open-source. Uploading all my semester notes here to help juniors out! 🚀",
+    "university": "JSS Academy of Technical Education, Noida (AKTU)",
+    "location": "Noida, India",
+    "savedNotes": [
+      "699d79bec2f7a122b459d027"
+    ],
+    "role": "user",
+    "showLastSeen": true,
+    "following": [],
+    "followers": [
+      "6999fe84ad6b48a9d9b2a766"
+    ],
+    "noteCount": 4,
+    "blogCount": 0,
+    "lastSeen": "2026-03-09T16:47:48.349Z",
+    "createdAt": "2026-02-21T18:30:43.371Z",
+    "updatedAt": "2026-03-09T16:47:48.350Z",
+    "__v": 2,
+    "hivePoints": 2,
+    "purchasedNotes": [],
+    "walletBalance": 0,
+    "pendingBalance": 0,
+    "payoutDetails": {
+      "upiId": "",
+      "bankName": "",
+      "accountNumber": "",
+      "ifscCode": ""
+    },
+    "isVerifiedEducator": false,
+    "badges": {
+      "list": [],
+      "consistentLearner": {
+        "isActive": false
+      }
+    },
+    "purchasedBundles": [],
+    "payoutSchedule": []
+  },
+  {
+    "_id": "6999f5c97fd0a3284057c63d",
+    "name": "Akshit Sharma",
+    "email": "cehere3471@alibto.com",
+    "password": "$2b$10$dDV7EwlSQyixKy/WVC4WHOeM5CVQJobW.vebouYfaTAK5lnPX9k/.",
+    "avatar": "https://cdn.stuhive.in/avatars/6999f5c97fd0a3284057c63d/1771697658967-avatar.webp",
+    "avatarKey": "avatars/6999f5c97fd0a3284057c63d/1771697658967-avatar.webp",
+    "bio": "Computer Science (B.Tech) student at AKTU. Passionate about Artificial Intelligence, Machine Learning, and helping peers by sharing premium handwritten DSA and AI notes!",
+    "university": "Dr. A.P.J. Abdul Kalam Technical University (AKTU)",
+    "location": "Lucknow, India",
+    "savedNotes": [],
+    "role": "user",
+    "showLastSeen": true,
+    "following": [],
+    "followers": [],
+    "noteCount": 7,
+    "blogCount": 0,
+    "lastSeen": "2026-03-09T16:48:33.383Z",
+    "createdAt": "2026-02-21T18:13:29.618Z",
+    "updatedAt": "2026-03-09T16:48:33.383Z",
+    "__v": 0,
+    "hivePoints": 4
+  },
+  {
+    "_id": "69aafc9ea51d2ba093fe0daa",
+    "name": "Anuruddha Kushwaha",
+    "email": "anuruddhakushwaha50338@gmail.com",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJk9ReL_m6B0EqRsMOlC7pP0O5Q39jrMFfsMlnzmBUHIDLGLQ=s96-c",
+    "avatarKey": "",
+    "bio": "",
+    "university": "",
+    "location": "",
+    "savedNotes": [],
+    "role": "user",
+    "showLastSeen": true,
+    "following": [],
+    "followers": [],
+    "noteCount": 0,
+    "blogCount": 0,
+    "hivePoints": 0,
+    "badges": [],
+    "lastSeen": "2026-03-06T16:12:51.122Z",
+    "createdAt": "2026-03-06T16:11:10.876Z",
+    "updatedAt": "2026-03-09T16:56:32.488Z",
+    "__v": 0,
+    "isVerifiedEducator": false
+  },
+  {
+    "_id": "699b4b860c69efac7842364f",
+    "name": "Aditya Choudhary",
+    "email": "adityanain552@gmail.com",
+    "password": "$2b$10$bYf4CezGFjb59nqzutJqAuBQkA0kZjMz/IYGmgUlf0oHdfcn6s5xG",
+    "avatar": "https://cdn.stuhive.in/avatars/699b4b860c69efac7842364f/1771792152509-avatar.webp",
+    "avatarKey": "avatars/699b4b860c69efac7842364f/1771792152509-avatar.webp",
+    "bio": "Computer Science and Engineering student at gniot greater noida, Next Js, Mern developer, having multiple cloud skills, AWS, Azure,Google Cloud, SEO Optimzer, Java DSA, React Native, Expo Go",
+    "university": "GNIOT",
+    "location": "Greater Noida, India",
+    "savedNotes": [
+      "69aeeeab2067360e950e05a3",
+      "6999f2d717c7cbd260f6cf54"
+    ],
+    "role": "user",
+    "showLastSeen": true,
+    "following": [
+      "6999fe84ad6b48a9d9b2a766",
+      "6999f1a6335e35fbefd6dd9f",
+      "699a063a4e77e5813c143ae9"
+    ],
+    "followers": [
+      "6999f1a6335e35fbefd6dd9f",
+      "699b41fb343a35a525f5c033",
+      "6999fe84ad6b48a9d9b2a766",
+      "699c8264f81f72bb6648c4cc",
+      "699a063a4e77e5813c143ae9",
+      "69a59b7149a8325ae36b3132",
+      "69a5b515c402cb76b4590931"
+    ],
+    "noteCount": 22,
+    "blogCount": 8,
+    "lastSeen": "2026-03-10T18:10:35.980Z",
+    "createdAt": "2026-02-22T18:31:34.659Z",
+    "updatedAt": "2026-03-11T18:51:02.130Z",
+    "__v": 37,
+    "hivePoints": 222,
+    "badges": [],
+    "purchasedNotes": [
+      "69abdf367202dc8fa00a42a5"
+    ],
+    "walletBalance": 71.2,
+    "payoutDetails": {
+      "upiId": "adityanian55@oksbi",
+      "bankName": "sbi",
+      "accountNumber": "87568586721487",
+      "ifscCode": "sbin0005382"
+    },
+    "isVerifiedEducator": true,
+    "payoutSchedule": [
+      {
+        "amount": 39.2,
+        "availableDate": "2026-03-16T14:33:32.215Z",
+        "status": "pending",
+        "_id": "69aeda3cd3898922c788b2ff"
+      }
+    ],
+    "pendingBalance": 39.2
+  },
+  {
+    "_id": "6999f1a6335e35fbefd6dd9f",
+    "name": "Akshita Chouhan",
+    "email": "rovoray695@alibto.com",
+    "password": "$2b$10$M2ubkz0O0T1XZMT4mdDYzu..Rt/caN2n0AUMLxjUFYTpGXsworDqK",
+    "avatar": "https://cdn.stuhive.in/avatars/6999f1a6335e35fbefd6dd9f/1771696670678-avatar.webp",
+    "avatarKey": "avatars/6999f1a6335e35fbefd6dd9f/1771696670678-avatar.webp",
+    "bio": "Btech Computer Science student at Galgotias College Greater Noida",
+    "university": "Galgotias",
+    "location": "India,Greater Noida",
+    "savedNotes": [],
+    "role": "user",
+    "showLastSeen": true,
+    "following": [
+      "699b4b860c69efac7842364f"
+    ],
+    "followers": [
+      "699b4b860c69efac7842364f",
+      "69a91c49023a20501dab0101"
+    ],
+    "noteCount": 6,
+    "blogCount": 2,
+    "lastSeen": "2026-03-10T10:33:07.571Z",
+    "createdAt": "2026-02-21T17:55:50.310Z",
+    "updatedAt": "2026-03-10T10:33:07.571Z",
+    "__v": 5,
+    "hivePoints": 82,
+    "badges": [],
+    "walletBalance": 0,
+    "purchasedNotes": [
+      "699d79bec2f7a122b459d027",
+      "69ad9607ea3e00d85a16edf2"
+    ],
+    "payoutDetails": {
+      "upiId": "rovoray695@alibto.com",
+      "bankName": "lksgl",
+      "accountNumber": "Akshita",
+      "ifscCode": "bhhbh2424"
+    },
+    "isVerifiedEducator": true,
+    "purchasedBundles": [
+      {
+        "bundle": "699c1b928c84946ef0e42ff1",
+        "notesSnapshot": [
+          "69ad9607ea3e00d85a16edf2",
+          "699d79bec2f7a122b459d027"
+        ],
+        "_id": "69aeda3cd3898922c788b2fd",
+        "purchasedAt": "2026-03-09T14:33:32.275Z"
+      }
+    ]
+  },
+  {
+    "_id": "699b41fb343a35a525f5c033",
+    "name": "Ankush Nandal",
+    "email": "hiloye5149@advarm.com",
+    "password": "$2b$10$MI8muDaVPfSaiJTKRtqtz.bFw6x4TkbGbtu06s4WrsXZnxEt8iAPm",
+    "avatar": "https://cdn.stuhive.in/avatars/699b41fb343a35a525f5c033/1771784782487-avatar.webp",
+    "avatarKey": "avatars/699b41fb343a35a525f5c033/1771784782487-avatar.webp",
+    "bio": "Computer Science student passionate about AI, cloud computing, and academic collaboration. I love writing about artificial intelligence, simplifying complex concepts, and sharing my notes to help peers ace their exams. Based in [Meerut, India].",
+    "university": "Choudhary Charan Singh University(CCSU)",
+    "location": "Meerut,India",
+    "savedNotes": [],
+    "role": "user",
+    "showLastSeen": true,
+    "following": [
+      "699b4b860c69efac7842364f"
+    ],
+    "followers": [],
+    "noteCount": 5,
+    "blogCount": 1,
+    "lastSeen": "2026-02-27T17:58:40.507Z",
+    "createdAt": "2026-02-22T17:50:51.134Z",
+    "updatedAt": "2026-03-08T12:25:16.915Z",
+    "__v": 4,
+    "hivePoints": 26,
+    "isVerifiedEducator": true,
+    "purchasedNotes": [],
+    "walletBalance": 0,
+    "payoutDetails": {
+      "upiId": "",
+      "bankName": "",
+      "accountNumber": "",
+      "ifscCode": ""
+    },
+    "badges": {
+      "list": [],
+      "consistentLearner": {
+        "isActive": false
+      }
+    }
+  },
+  {
+    "_id": "699c8264f81f72bb6648c4cc",
+    "name": "Avinash Mishra",
+    "email": "bewovad920@dolofan.com",
+    "password": "$2b$10$vixfnZi5DbqeZgMwm2PavO/PnaWA5qm5Tn4dpNy97RUQhjhAGThXm",
+    "avatar": "https://cdn.stuhive.in/avatars/699c8264f81f72bb6648c4cc/1771865080710-avatar.webp",
+    "avatarKey": "avatars/699c8264f81f72bb6648c4cc/1771865080710-avatar.webp",
+    "bio": "Artificial Intelligence And Machine Learning (AIML), 2nd year, Python, Data Science, Machin Learning, DSA enthusiastic, C# developer",
+    "university": "Galgotias University",
+    "location": "Delhi,India",
+    "savedNotes": [],
+    "role": "user",
+    "showLastSeen": true,
+    "following": [
+      "699b4b860c69efac7842364f"
+    ],
+    "followers": [],
+    "noteCount": 0,
+    "blogCount": 2,
+    "lastSeen": "2026-03-02T15:57:31.859Z",
+    "createdAt": "2026-02-23T16:37:56.552Z",
+    "updatedAt": "2026-03-02T15:57:31.860Z",
+    "__v": 6,
+    "hivePoints": 0,
+    "badges": []
+  },
+  {
+    "_id": "69a6e64549da31c328ed528b",
+    "name": "crazy gamers",
+    "email": "us66304@gmail.com",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIrYLGBZyadstr1-1MWhbY6yWVob2mAk_y4vKjcb5hda2wVGq9i=s96-c",
+    "avatarKey": "",
+    "bio": "",
+    "university": "",
+    "location": "",
+    "savedNotes": [],
+    "role": "user",
+    "showLastSeen": true,
+    "following": [],
+    "followers": [],
+    "noteCount": 0,
+    "blogCount": 0,
+    "hivePoints": 0,
+    "badges": [],
+    "lastSeen": "2026-03-03T15:43:34.149Z",
+    "createdAt": "2026-03-03T13:46:45.398Z",
+    "updatedAt": "2026-03-03T15:43:34.149Z",
+    "__v": 0
+  },
+  {
+    "_id": "69a5b515c402cb76b4590931",
+    "name": "Lucky ",
+    "email": "appliancesmart50@gmail.com",
+    "avatar": "https://cdn.stuhive.in/avatars/69a5b515c402cb76b4590931/1772468163292-avatar.webp",
+    "avatarKey": "avatars/69a5b515c402cb76b4590931/1772468163292-avatar.webp",
+    "bio": "",
+    "university": "",
+    "location": "",
+    "savedNotes": [],
+    "role": "user",
+    "showLastSeen": true,
+    "following": [
+      "699b4b860c69efac7842364f"
+    ],
+    "followers": [],
+    "noteCount": 0,
+    "blogCount": 1,
+    "hivePoints": 20,
+    "badges": [],
+    "lastSeen": "2026-03-11T00:51:52.740Z",
+    "createdAt": "2026-03-02T16:04:37.472Z",
+    "updatedAt": "2026-03-11T00:51:52.741Z",
+    "__v": 1
+  },
+  {
+    "_id": "6999fe84ad6b48a9d9b2a766",
+    "name": "Aakriti Gupta",
+    "email": "wegad60983@alibto.com",
+    "password": "$2b$10$vMJ5bvQGVM.k9HBS8voqAu5fWve5CNoyUGNDE33vKUcPz1D8EXys2",
+    "avatar": "https://cdn.stuhive.in/avatars/6999fe84ad6b48a9d9b2a766/1771700055446-avatar.webp",
+    "avatarKey": "avatars/6999fe84ad6b48a9d9b2a766/1771700055446-avatar.webp",
+    "bio": "Computer Science and Engineering (Btech) Student at Meerut Institute of Engineering and Technology (MIET), Meerut, proficiency in Machine Learning, Python, Deep Learning",
+    "university": "Meerut Institute of Engineering and Technology (MIET)",
+    "location": "Meerut,India",
+    "savedNotes": [],
+    "role": "user",
+    "showLastSeen": true,
+    "following": [
+      "6999f9d3ad6b48a9d9b2a70c",
+      "699b4b860c69efac7842364f",
+      "69a91c49023a20501dab0101"
+    ],
+    "followers": [
+      "699b4b860c69efac7842364f",
+      "69a91c49023a20501dab0101"
+    ],
+    "noteCount": 8,
+    "blogCount": 1,
+    "lastSeen": "2026-03-09T16:48:03.321Z",
+    "createdAt": "2026-02-21T18:50:44.998Z",
+    "updatedAt": "2026-03-11T15:56:25.630Z",
+    "__v": 5,
+    "hivePoints": 62,
+    "badges": []
+  }
+]

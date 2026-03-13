@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "699edbde4fc15d3a71c0b79a",
+    "title": "Dsa first unit",
+    "description": "DSA first unit simple notes needed for quick revision",
+    "university": "Aktu",
+    "subject": "DSA",
+    "requester": "699b4b860c69efac7842364f",
+    "status": "fulfilled",
+    "createdAt": "2026-02-25T11:24:14.224Z",
+    "__v": 0,
+    "fulfillmentNote": "699d79bec2f7a122b459d027",
+    "fulfilledBy": "699a063a4e77e5813c143ae9"
+  },
+  {
+    "_id": "69aef5a0d646e75e6a8c6857",
+    "title": "DBMS first unit notes (last minute revision)",
+    "description": "i want such type of notes which i can use to revise in max 10 minutes like outside the exam centre or any other place",
+    "university": "Aktu",
+    "subject": "Database Management Systems (DBMS)",
+    "requester": "6999f5c97fd0a3284057c63d",
+    "status": "pending",
+    "createdAt": "2026-03-09T16:30:24.442Z",
+    "__v": 0
+  }
+]
