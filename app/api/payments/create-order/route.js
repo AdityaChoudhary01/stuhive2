@@ -1,4 +1,4 @@
-
+export const runtime = "edge";
 export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
@@ -55,20 +55,14 @@ export async function POST(req) {
       },
     });
 
-    // 🚨 THE MAGIC BULLET 🚨
-    // We use .set() instead of .append() to strictly overwrite Next.js's hidden RSC headers.
-    // "Accept: */*" forces Razorpay to ignore header negotiation and just return the JSON.
     const headers = new Headers();
     headers.set("Authorization", `Basic ${btoa(`${keyId}:${keySecret}`)}`);
     headers.set("Content-Type", "application/json");
-    headers.set("Accept", "*/*"); 
-    headers.set("User-Agent", "Razorpay-Node/2.9.6");
 
-    const razorpayRes = await fetch("https://api.razorpay.com/v1/orders", {
+    const razorpayRes = await fetch("https://api.razorpay.com", {
       method: "POST",
       headers: headers,
       body: requestBody,
-      // Leaving out cache: 'no-store' as it triggers extra Next.js header manipulation on Edge
     });
 
     const responseText = await razorpayRes.text();
@@ -81,7 +75,7 @@ export async function POST(req) {
     const order = JSON.parse(responseText);
 
     await db.insert(transactions).values({
-      id: crypto.randomUUID(),
+      id: crypto.randomUUID(), // Works globally in Edge
       buyerId: userId,
       sellerId,
       noteId: itemType === "note" ? item.id : null,
