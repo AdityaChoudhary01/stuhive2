@@ -1,24 +1,26 @@
 name = "stuhive"
 compatibility_date = "2024-03-20"
 compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".open-next/cloudflare"
 
-# ---------------------------------------------------------
-# DO NOT DELETE THESE BINDINGS! 
-# Your local `npm run dev` needs them to work. 
-# You will STILL need to link these manually in the Cloudflare 
-# Dashboard for your production app.
-# ---------------------------------------------------------
+# Asset configuration
+[assets]
+directory = ".open-next/cloudflare"
+binding = "ASSETS"
 
+# D1 database binding
 [[d1_databases]]
 binding = "DB"
 database_name = "stuhive"
 database_id = "7df9d1dc-6871-4b5c-a82a-3b7321da5966"
 migrations_dir = "drizzle/migrations"
 
+# R2 storage binding
 [[r2_buckets]]
 binding = "R2_BUCKET"
 bucket_name = "peernotez-files"
 
+# KV cache binding
 [[kv_namespaces]]
 binding = "KV_CACHE"
 id = "2cfb623bd8714165b068cb5a7acac608"

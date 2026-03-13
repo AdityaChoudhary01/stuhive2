@@ -8,7 +8,7 @@ import AblyProvider from "@/components/providers/AblyProvider";
 import PWARegister from "@/components/common/PWARegister";
 import PageTracker from "@/components/common/PageTracker"; // 🚀 ADDED: Admin Analytics Tracker
 import Script from "next/script";
-
+export const runtime = "edge";
 
 // Replace the current Inter font import line near the top with this:
 const inter = Inter({ subsets: ["latin"], display: "swap" });
